@@ -1,0 +1,38 @@
+'use client'
+import Link from 'next/link'
+import React, { useState } from 'react'
+import Navigation from './Navigation'
+
+const Header = () => {
+  const [openMenu, setOpenMenu] = useState<boolean>(false)
+  return (
+    <header className="py-5 bg-bg-white text-secondary-brown relative z-50 min-h-[89px] border-b px-5 border-stone-900">
+      {/* CONTAINER */}
+      <div className="container mx-auto flex justify-between items-center">
+        {/* LOGO */}
+        <div>
+          <Link href={'/'}>
+            <h1 className="font-glitch text-5xl">LankyJo</h1>
+          </Link>
+        </div>
+        {/* NAVIGATION */}
+        <Navigation isOpen={openMenu} />
+        {/* MENU */}
+        <div
+          onClick={() => setOpenMenu(!openMenu)}
+          className="flex flex-col gap-1 cursor-pointer p-4 md:hidden"
+        >
+          <span
+            className={`w-10 h-[3px] bg-stone-900 inline-block transition-all transform ${openMenu && 'rotate-45'}`}
+          ></span>
+          <span
+            className={`w-10 h-[3px] bg-stone-900 inline-block transition-all transform ${openMenu && '-rotate-45 -translate-y-[7px]'}`}
+          ></span>
+        </div>
+      </div>
+      {/* CONTAINER ENDS */}
+    </header>
+  )
+}
+
+export default Header
