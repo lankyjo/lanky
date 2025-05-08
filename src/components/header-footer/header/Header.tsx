@@ -2,11 +2,17 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 import Navigation from './Navigation'
+import { motion } from 'motion/react'
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false)
   return (
-    <header className="py-5 bg-bg-white text-secondary-brown relative z-50 min-h-[89px] border-b px-5 border-stone-900">
+    <motion.header
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, delay: 1 }}
+      className="py-5 bg-bg-white text-secondary-brown relative z-50 min-h-[89px] border-b px-5 border-stone-900"
+    >
       {/* CONTAINER */}
       <div className="container mx-auto flex justify-between items-center">
         {/* LOGO */}
@@ -16,7 +22,7 @@ const Header = () => {
           </Link>
         </div>
         {/* NAVIGATION */}
-        <Navigation isOpen={openMenu} />
+        <Navigation isOpen={openMenu} setisOpen={setOpenMenu} />
         {/* MENU */}
         <div
           onClick={() => setOpenMenu(!openMenu)}
@@ -31,7 +37,7 @@ const Header = () => {
         </div>
       </div>
       {/* CONTAINER ENDS */}
-    </header>
+    </motion.header>
   )
 }
 

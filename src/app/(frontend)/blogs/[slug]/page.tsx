@@ -6,13 +6,14 @@ import Image from 'next/image'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
+export default async function BlogPost({ params }: any) {
   const payload = await getPayload({ config: config })
+  const { slug } = await params
   const blogObj = await payload.find({
     collection: 'blogs',
     where: {
       slug: {
-        equals: params.slug,
+        equals: slug,
       },
     },
   })

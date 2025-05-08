@@ -1,9 +1,15 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React, { Dispatch, SetStateAction, useEffect } from 'react'
 import Link from 'next/link'
 
-const Navigation = ({ isOpen }: { isOpen: boolean }) => {
+const Navigation = ({
+  isOpen,
+  setisOpen,
+}: {
+  isOpen: boolean
+  setisOpen: Dispatch<SetStateAction<boolean>>
+}) => {
   const navItems = [
     {
       name: 'works',
@@ -48,7 +54,9 @@ const Navigation = ({ isOpen }: { isOpen: boolean }) => {
         <ul className="flex flex-col font-donatto text-3xl items-center gap-4">
           {navItems.map((item) => (
             <li key={item.name}>
-              <Link href={`/${item.name}`}>{item.name}</Link>
+              <Link onClick={() => setisOpen(false)} href={`/${item.name}`}>
+                {item.name}
+              </Link>
             </li>
           ))}
         </ul>
