@@ -18,7 +18,7 @@ export default async function HeroBlogs() {
       <div className="container mx-auto  md:p-0">
         <div className="flex justify-between items-baseline ">
           <h2 className="text-4xl font-bold">My Blogs</h2>
-          <Link href={''} className="underline text-xs md:text-base">
+          <Link href={'/blogs'} className="underline text-xs md:text-base">
             View all Blogs
           </Link>
         </div>
