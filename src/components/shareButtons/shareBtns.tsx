@@ -1,14 +1,19 @@
 'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaShare, FaTwitter, FaWhatsapp } from 'react-icons/fa'
 
 export const ShareBtns = () => {
-  const shareUrl = typeof window !== 'undefined' ? window.location.href : ''
+  const [shareUrl, setShareUrl] = useState('')
+
+  useEffect(() => {
+    setShareUrl(window.location.href)
+  }, [])
 
   const copyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(shareUrl)
+      alert('Link copied to clipboard!')
     } catch (err) {
       console.error('Failed to copy!', err)
     }
@@ -31,10 +36,10 @@ export const ShareBtns = () => {
         <FaWhatsapp />
       </Link>
       <button
+        className="cursor-pointer"
         onClick={copyToClipboard}
         title="Copy Link"
         aria-label="Copy Link"
-        className="cursor-pointer"
       >
         <FaShare />
       </button>
