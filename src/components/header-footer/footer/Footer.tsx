@@ -7,9 +7,9 @@ const Footer = () => {
     {
       name: 'works',
     },
-    {
-      name: 'services',
-    },
+    // {
+    //   name: 'services',
+    // },
     {
       name: 'blogs',
     },

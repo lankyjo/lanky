@@ -23,8 +23,55 @@ const pognia = localFont({
 })
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+  title: {
+    default: 'LankyJo | Web Developer & Creative Technologist',
+  },
+  description:
+    'LankyJo is a passionate web developer and creative problem solver specializing in modern web technologies, full-stack development, and ethical hacking.',
+  keywords: [
+    'LankyJo',
+    'web developer',
+    'frontend developer',
+    'React',
+    'Next.js',
+    'PayloadCMS',
+    'Node.js',
+    'ethical hacking',
+    'portfolio',
+    'full-stack',
+  ],
+  authors: [{ name: 'LankyJo' }],
+  creator: 'LankyJo',
+  publisher: 'LankyJo',
+  openGraph: {
+    title: 'LankyJo | Web Developer & Creative Technologist',
+    description:
+      'Explore LankyJo’s web development portfolio, technical blog, and creative experiments powered by Next.js and PayloadCMS.',
+    siteName: 'LankyJo',
+    images: [
+      {
+        url: '/images/about.png', // Recommended: 1200x630 image for social previews
+        width: 1200,
+        height: 630,
+        alt: 'LankyJo – Web Developer',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'LankyJo | Web Developer & Creative Technologist',
+    description:
+      'Modern web development, security insights, and creative code — explore LankyJo’s work and blog.',
+    creator: '@yourTwitterHandle',
+    images: ['/images/about.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+  },
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
