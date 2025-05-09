@@ -26,6 +26,9 @@ export const metadata = {
   title: {
     default: 'LankyJo | Web Developer & Creative Technologist',
   },
+  icons: {
+    icon: '/favicon.png',
+  },
   description:
     'LankyJo is a passionate web developer and creative problem solver specializing in modern web technologies, full-stack development, and ethical hacking.',
   keywords: [
