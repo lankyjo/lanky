@@ -72,7 +72,7 @@ export default async function BlogPost({ params }: any) {
       <small className="text-sm text-gray-500">
         {new Date(blog.createdAt).toLocaleDateString()}
       </small>
-      <h2 className="text-3xl font-semibold">Lanky&apos;s Thoughts on {blog.blogTitle}</h2>
+      <h2 className="text-3xl font-semibold">{blog.blogTitle}</h2>
       <div className="overflow-hidden rounded-md aspect-video max-h-[600px] w-full relative">
         <Image
           src={blogImage.url || ''}
