@@ -48,11 +48,6 @@ export const metadata = {
     creator: '@the_lankyjo',
     images: ['/images/about.png'],
   },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: false,
-  },
 }
 
 export default function AboutPage() {

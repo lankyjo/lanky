@@ -1,3 +1,5 @@
+export const revalidate = 120
+
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { notFound } from 'next/navigation'

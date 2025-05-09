@@ -1,3 +1,5 @@
+export const revalidate = 120
+
 import config from '@payload-config'
 import Link from 'next/link'
 import { getPayload } from 'payload'

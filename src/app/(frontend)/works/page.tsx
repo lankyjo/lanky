@@ -1,3 +1,4 @@
+export const revalidate = 120
 import { HeroWorksCard } from '@/components/heroworks/HeroCard'
 import config from '@/payload.config'
 import { getPayload } from 'payload'
