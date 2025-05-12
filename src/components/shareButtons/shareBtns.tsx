@@ -1,12 +1,15 @@
 'use client'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import { FaShare, FaTwitter, FaWhatsapp } from 'react-icons/fa'
+import { FaComment, FaShare, FaTwitter, FaWhatsapp } from 'react-icons/fa'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { Button } from '../ui/button'
+import { CommentSection } from './CommentSection'
 
 export const ShareBtns = () => {
   const [shareUrl, setShareUrl] = useState('')
+  const [showCommentSection, setShowCommentSection] = useState(false)
 
   useEffect(() => {
     setShareUrl(window.location.href)
@@ -53,6 +56,13 @@ export const ShareBtns = () => {
       >
         <FaShare />
       </button>
+      <Button variant="ghost" className="bg-bg-white" onClick={() => setShowCommentSection(true)}>
+        <FaComment />
+      </Button>
+      <CommentSection
+        showCommentSection={showCommentSection}
+        setShowCommentSection={setShowCommentSection}
+      />
       <ToastContainer />
     </div>
   )

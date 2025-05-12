@@ -49,8 +49,11 @@ export const metadata = {
     images: ['/images/about.png'],
   },
 }
-
-export default function AboutPage() {
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+export default async function AboutPage() {
+  await sleep(3000)
   return (
     <section className="container mx-auto p-5 xl:p-0 space-y-5">
       <h2 className="text-4xl">About Me</h2>

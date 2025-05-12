@@ -53,8 +53,11 @@ export const generateMetadata = async ({ params }: any) => {
     },
   }
 }
-
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
 export default async function BlogPost({ params }: any) {
+  await sleep(1000)
   const payload = await getPayload({ config })
   const { slug } = await params
   const blogObj = await payload.find({
@@ -83,11 +86,20 @@ export default async function BlogPost({ params }: any) {
           className="absolute inset-0 object-cover object-center"
         />
       </div>
-      <div className="w-full mx-auto prose-blockquote:border-b-2 prose-blockquote:border-l-0 prose-blockquote:py-3 prose-blockquote:max-w-[600px] prose-blockquote:mx-auto prose-blockquote:border-secondary-brown prose-blockquote:border-t-2 prose-code:bg-black prose-code:text-white prose max-w-none">
+      <div
+        className="prose max-w-none w-full mx-auto 
+  prose-code:bg-black prose-code:text-white 
+  prose-blockquote:relative prose-blockquote:p-6 
+  prose-blockquote:pl-10
+   prose-blockquote:italic 
+  prose-blockquote:before:content-['“'] prose-blockquote:before:absolute 
+  prose-blockquote:before:top-0 prose-blockquote:before:left-0 
+  prose-blockquote:before:text-8xl prose-blockquote:before:text-secondary-brown 
+  prose-blockquote:before:font-glitch prose-blockquote:before:leading-none"
+      >
         <RichText data={blog.blogContent as SerializedEditorState} />
-
-        <ShareBtns />
       </div>
+      <ShareBtns />
     </section>
   )
 }

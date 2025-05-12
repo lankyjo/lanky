@@ -3,6 +3,7 @@ import './styles.css'
 import localFont from 'next/font/local'
 import Header from '@/components/header-footer/header/Header'
 import Footer from '@/components/header-footer/footer/Footer'
+import { Toaster } from '@/components/ui/sonner'
 
 const glitchFont = localFont({
   src: '../fonts/SDGlitch_Demo.ttf',
@@ -86,7 +87,8 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         className={`${glitchFont.variable} ${donatto.variable} ${pognia.className} ${pognia.variable} bg-bg-white antialiased`}
       >
         <Header />
-        <main className="my-5">{children}</main>
+        <main className="my-5 mt-30">{children}</main>
+        <Toaster />
         <Footer />
       </body>
     </html>

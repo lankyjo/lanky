@@ -11,7 +11,7 @@ const Header = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 1 }}
-      className="py-5 bg-bg-white text-secondary-brown relative z-50 min-h-[89px] border-b px-5 border-stone-900"
+      className="py-5 bg-bg-white text-secondary-brown z-50 min-h-[89px] fixed top-0 left-0 w-full border-b px-5 border-stone-900"
     >
       {/* CONTAINER */}
       <div className="container mx-auto flex justify-between items-center">

@@ -13,6 +13,7 @@ import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { Works } from './collections/Works'
 import { Blogs } from './collections/Blogs'
 import { AboutImages } from './globals/AboutImages'
+import { Comments } from './collections/Comments'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -25,7 +26,7 @@ export default buildConfig({
     },
   },
   globals: [AboutImages],
-  collections: [Users, Media, Works, Blogs],
+  collections: [Users, Media, Works, Blogs, Comments],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
